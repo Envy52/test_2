@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import AnimatedNumber from "./AnimatedNumber";
 import { PieChart, TrendingUp, Clock, Donut, BarChart, Circle, AreaChart } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,24 @@ const FeaturesSection = () => {
   const sectionRef = useRef(null);
   const { t } = useTranslation();
 
-  const cards = [
+  // Анимация при попадании в экран
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setStartAnimation(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Массив карточек с переводами, создаётся при изменении языка
+  const cards = useMemo(() => [
     { id: "n90", number: 90, unit: "%", title: t("features.marketFree"), icon: <PieChart size={60} className="text-cyan-400 opacity-40" /> },
     { id: "n41m", number: 41000000, unit: "сум", title: t("features.lowEntry"), icon: <TrendingUp size={60} className="text-purple-400 opacity-40" /> },
     { id: "n247", number: 24, number2: 7, unit: "", title: t("features.works247"), icon: <Clock size={60} className="text-cyan-400 opacity-40" /> },
@@ -17,25 +34,7 @@ const FeaturesSection = () => {
     { id: "n18m", number: 18000000, unit: "сум", title: t("features.profit10Machines"), icon: <BarChart size={60} className="text-purple-400 opacity-30" />, colSpan: "lg:col-span-2" },
     { id: "nMinVznos", number: 100, unit: "%", title: t("features.minContribution"), icon: <Circle size={60} className="text-cyan-400 opacity-40" />, reverse: true },
     { id: "nRassrochka", number: 14, unit: "%", title: t("features.creditInstallment"), subtitle: t("features.creditSubtitle"), button: t("features.learnMore"), colSpan: "lg:col-span-3", reverse: true },
-  ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setStartAnimation(true);
-          observer.disconnect(); 
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  ], [t]); // массив пересоздаётся только при изменении функции t (т.е. при смене языка)
 
   return (
     <section ref={sectionRef} className="relative py-20 px-4 bg-slate-950 overflow-hidden">
@@ -47,9 +46,7 @@ const FeaturesSection = () => {
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white">{t("features.title")}</h2>
-          <p className="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
-            {t("features.description")}
-          </p>
+          <p className="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">{t("features.description")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
