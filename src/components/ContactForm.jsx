@@ -47,7 +47,7 @@ export default function ContactForm() {
   const [category, setCategory] = useState("clients");
   const [formData, setFormData] = useState({
     name: "",
-    city: t("contact.cityDefault"), // используем перевод для города по умолчанию
+    city: t("contact.cityDefault"), 
     phone: "",
     comment: "",
   });

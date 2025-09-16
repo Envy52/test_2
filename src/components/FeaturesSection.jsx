@@ -8,7 +8,6 @@ const FeaturesSection = () => {
   const sectionRef = useRef(null);
   const { t } = useTranslation();
 
-  // Анимация при попадании в экран
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -24,7 +23,6 @@ const FeaturesSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Массив карточек с переводами, создаётся при изменении языка
   const cards = useMemo(() => [
     { id: "n90", number: 90, unit: "%", title: t("features.marketFree"), icon: <PieChart size={60} className="text-cyan-400 opacity-40" /> },
     { id: "n41m", number: 41000000, unit: "сум", title: t("features.lowEntry"), icon: <TrendingUp size={60} className="text-purple-400 opacity-40" /> },
@@ -34,8 +32,7 @@ const FeaturesSection = () => {
     { id: "n18m", number: 18000000, unit: "сум", title: t("features.profit10Machines"), icon: <BarChart size={60} className="text-purple-400 opacity-30" />, colSpan: "lg:col-span-2" },
     { id: "nMinVznos", number: 100, unit: "%", title: t("features.minContribution"), icon: <Circle size={60} className="text-cyan-400 opacity-40" />, reverse: true },
     { id: "nRassrochka", number: 14, unit: "%", title: t("features.creditInstallment"), subtitle: t("features.creditSubtitle"), button: t("features.learnMore"), colSpan: "lg:col-span-3", reverse: true },
-  ], [t]); // массив пересоздаётся только при изменении функции t (т.е. при смене языка)
-
+  ], [t]); 
   return (
     <section ref={sectionRef} className="relative py-20 px-4 bg-slate-950 overflow-hidden">
       <div className="absolute inset-0">

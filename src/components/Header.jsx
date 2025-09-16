@@ -15,7 +15,6 @@ const Header = () => {
     { code: "en", label: "English", flag: "🇬🇧" },
   ];
 
-  // Загружаем сохранённый язык
   useEffect(() => {
     const savedLang = localStorage.getItem("language");
     if (savedLang && savedLang !== i18n.language) {
@@ -32,7 +31,6 @@ const Header = () => {
     setIsOpen(false);
   };
 
-  // Закрытие при клике вне меню
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -46,7 +44,6 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-xl shadow-xl">
       <div className="container mx-auto flex items-center justify-between p-4">
-        {/* Лого */}
         <Link to="/" className="flex items-center space-x-4">
           <div className="bg-gradient-to-r from-cyan-400 to-purple-500 p-2 rounded-full shadow-lg">
             <Droplet className="text-white drop-shadow-lg" size={36} />
@@ -61,7 +58,6 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Соцсети + языки */}
         <div className="flex items-center space-x-6">
           <a
             href="#"
@@ -82,7 +78,6 @@ const Header = () => {
             <Instagram size={24} />
           </a>
 
-          {/* Dropdown языков */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsOpen(!isOpen)}
