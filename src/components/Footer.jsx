@@ -27,12 +27,10 @@ const LogoIcon = () => (
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-slate-900/80 backdrop-blur-xl border-t border-white/10 py-16">
-      {/* Glow эффекты */}
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
 
       <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-4 text-slate-300">
-        {/* Лого */}
         <div className="flex items-center md:items-start">
           <div className="flex items-center space-x-3">
             <LogoIcon />
@@ -47,7 +45,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Навигация */}
         <div>
           <h3 className="font-bold text-white mb-4 text-lg">Навигация:</h3>
           <ul className="space-y-2 columns-2">
@@ -64,7 +61,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Контакты */}
         <div>
           <h3 className="font-bold text-white mb-4 text-lg">Контакты:</h3>
           <ul className="space-y-2">

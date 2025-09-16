@@ -4,14 +4,12 @@ import { ArrowUpRight } from "lucide-react";
 const ServiceProducts = () => {
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-slate-950">
-      {/* Aurora lights */}
       <div className="absolute inset-0">
         <div className="absolute -top-24 -left-24 w-80 h-80 bg-cyan-400/25 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500/25 rounded-full blur-3xl animate-pulse"></div>
       </div>
 
       <div className="relative container mx-auto bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-3xl p-10 sm:p-14 shadow-xl flex flex-col md:flex-row gap-8 items-start">
-        {/* Левая часть с карточкой */}
         <div className="flex-grow relative z-10 space-y-6">
           <div>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
@@ -27,7 +25,7 @@ const ServiceProducts = () => {
 
           <div className="bg-slate-800/70 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300 max-w-md">
             <img
-              src="https://via.placeholder.com/400x300"
+              src="/images/serviceproducts.png"
               alt="Aquabox-2024"
               className="w-full h-64 object-cover"
             />
@@ -46,7 +44,6 @@ const ServiceProducts = () => {
           </div>
         </div>
 
-        {/* Правая часть с кнопкой */}
         <div className="flex-shrink-0 flex items-start relative z-10">
           <button
             className="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 

@@ -19,7 +19,6 @@ const ReliabilitySection = () => {
 
   return (
     <section className="bg-slate-950 py-20 px-4 relative overflow-hidden">
-      {/* Aurora lights */}
       <div className="absolute inset-0">
         <div className="absolute -top-20 left-1/4 w-80 h-80 bg-cyan-400/25 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute -bottom-24 right-1/4 w-96 h-96 bg-purple-500/25 rounded-full blur-3xl animate-pulse"></div>
@@ -28,7 +27,6 @@ const ReliabilitySection = () => {
       <div className="relative container mx-auto bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-3xl p-10 sm:p-14 shadow-xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
-          {/* Текст */}
           <div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-10 drop-shadow-lg">
               Обеспечиваем <span className="text-cyan-400">надежность</span>
@@ -50,10 +48,9 @@ const ReliabilitySection = () => {
             </div>
           </div>
 
-          {/* Фото */}
           <div className="flex justify-center lg:justify-end">
             <img
-              src="https://via.placeholder.com/450x320.png?text=Aquabox+Надежность"
+              src='/images/reliability.png' 
               alt="Надежная сборка аппарата Aquabox"
               className="rounded-2xl w-full max-w-md shadow-lg shadow-cyan-500/20 hover:scale-[1.02] transition-transform duration-300"
             />

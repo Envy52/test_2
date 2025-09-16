@@ -86,7 +86,6 @@ export default function ContactForm() {
 
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center p-6 bg-slate-950 overflow-hidden">
-      {/* Aurora background */}
       <div className="absolute inset-0">
         <div className="absolute -top-20 -left-20 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-purple-400/20 rounded-full blur-3xl"></div>
@@ -94,7 +93,6 @@ export default function ContactForm() {
 
       <div className="w-full max-w-5xl mx-auto bg-slate-900/70 backdrop-blur-xl border border-slate-700 rounded-2xl shadow-lg p-8 md:p-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Левая часть */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
               У вас остались вопросы?
@@ -137,7 +135,6 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Правая часть (форма) */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-5">
               <FormInput

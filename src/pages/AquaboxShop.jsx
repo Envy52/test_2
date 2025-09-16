@@ -3,25 +3,18 @@ import { Info } from "lucide-react";
 const products = [
   {
     id: 1,
-    title: "Аппарат для продажи воды Эйр 500",
-    year: "2024 год",
+    title: "Водомат RS-27",
+    year: "2025 год",
     description:
       "Аппарат по очистке и продаже питьевой воды. Состоит из модуля розлива и системы очистки в антивандальном корпусе.",
-    image: "/images/aquabox500.png",
-  },
-  {
-    id: 2,
-    title: "Аппарат для продажи воды Эйр 300",
-    year: "2023 год",
-    description:
-      "Компактный аппарат для продажи воды с закрытой системой очистки.",
     image: "/images/aquabox300.png",
   },
   {
-    id: 3,
-    title: "Аппарат для продажи воды НаноФrost",
-    year: "2023 год",
-    description: "Антикризисное решение для бизнеса с минимальными затратами.",
+    id: 2,
+    title: "Водомат RS-28",
+    year: "2025 год",
+    description:
+      "Компактный аппарат для продажи воды с закрытой системой очистки.",
     image: "/images/aquaboxnano.png",
   },
 ];
@@ -29,7 +22,6 @@ const products = [
 export default function AquaboxShop() {
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-slate-950 text-white">
-      {/* Glow элементы */}
       <div className="absolute -top-24 -left-24 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
 

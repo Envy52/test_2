@@ -6,7 +6,6 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-xl shadow-xl">
       <div className="container mx-auto flex items-center justify-between p-4">
         
-        {/* Логотип */}
         <Link to="/" className="flex items-center space-x-4">
           <div className="bg-gradient-to-r from-cyan-400 to-purple-500 p-2 rounded-full shadow-lg">
             <Droplet className="text-white drop-shadow-lg" size={36} />
@@ -21,7 +20,6 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Социальные иконки + выбор языка */}
         <div className="flex items-center space-x-6">
           <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
             <Send size={24} />
@@ -33,7 +31,6 @@ const Header = () => {
             <Instagram size={24} />
           </a>
 
-          {/* Селект языков */}
           <div className="relative">
             <select className="appearance-none bg-slate-800/50 border border-slate-600 text-white py-2 px-3 pr-8 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 transition duration-300">
               <option value="ru">RU</option>

@@ -3,7 +3,6 @@ import React from 'react';
 const SupportSection = () => {
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-slate-950">
-      {/* Aurora glow эффекты - больше шаров */}
       <div className="absolute -top-24 -left-24 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute top-0 left-1/3 w-72 h-72 bg-blue-400/15 rounded-full blur-3xl animate-pulse delay-200"></div>
@@ -15,12 +14,10 @@ const SupportSection = () => {
 
       <div className="relative container mx-auto bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-3xl p-10 sm:p-14 shadow-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Заголовок */}
           <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg hover:translate-x-1 transition-transform duration-300">
             Постоянное <span className="text-cyan-400">сопровождение бизнеса</span>
           </h2>
 
-          {/* Текст */}
           <div className="space-y-6">
             <p className="text-2xl md:text-3xl font-semibold text-white leading-snug hover:translate-x-1 transition-transform duration-300">
               Мы будем постоянно следить за{' '}

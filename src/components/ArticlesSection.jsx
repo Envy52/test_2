@@ -13,7 +13,6 @@ const articles = [
 const ArticlesSection = () => {
   return (
     <div className="relative bg-slate-950 py-16 sm:py-24 px-4 overflow-hidden">
-      {/* Aurora blur lights */}
       <div className="absolute top-10 left-20 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-pulse delay-700"></div>
       <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>

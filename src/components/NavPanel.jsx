@@ -10,9 +10,9 @@ const NavPanel = () => {
   ];
 
   return (
-    <nav className="bg-slate-900/80 backdrop-blur-xl shadow-xl sticky top-0 z-50">
+    <nav className="bg-slate-900/95 backdrop-blur-xl shadow-xl sticky top-0 z-50">
       <div className="container mx-auto">
-        <ul className="flex justify-center items-center space-x-10 py-5">
+        <ul className="flex justify-center items-center space-x-10 py-8">
           {navLinks.map((link) => (
             <li key={link.text}>
               {link.href.startsWith("/") ? (

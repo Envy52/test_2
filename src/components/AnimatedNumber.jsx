@@ -1,38 +1,36 @@
 import React, { useEffect, useState } from "react";
 
-const AnimatedNumber = ({ to, from = 0, startAnimation }) => {
-  const [value, setValue] = useState(from);
+const AnimatedNumber = ({ from = 0, to = 0, reverse = false, duration = 2000, start = false }) => {
+  const [value, setValue] = useState(reverse ? from : 0);
 
   useEffect(() => {
-    if (!startAnimation) return;
+    if (!start) return; 
 
-    let start = from;
-    let end = to;
-    let duration = 2000;
+    let startVal = reverse ? from : 0;
+    let endVal = reverse ? 0 : to;
     let startTime;
     let animationFrame;
 
-    // easeOutCubic (можно поменять на другие функции)
     const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
     const step = (timestamp) => {
       if (!startTime) startTime = timestamp;
       let rawProgress = Math.min((timestamp - startTime) / duration, 1);
-      let easedProgress = easeOutCubic(rawProgress); // замедление под конец
-      let current = Math.floor(easedProgress * (end - start) + start);
+      let easedProgress = easeOutCubic(rawProgress);
+      let current = Math.floor(easedProgress * (endVal - startVal) + startVal);
       setValue(current);
 
       if (rawProgress < 1) {
         animationFrame = requestAnimationFrame(step);
       } else {
-        setValue(end);
+        setValue(endVal);
       }
     };
 
     animationFrame = requestAnimationFrame(step);
 
     return () => cancelAnimationFrame(animationFrame);
-  }, [startAnimation, to, from]);
+  }, [from, to, reverse, duration, start]);
 
   return <>{value.toLocaleString("ru-RU")}</>;
 };
