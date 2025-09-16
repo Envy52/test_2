@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0a0a1a; 
+
+  background-image: 
+    radial-gradient(at 15% 20%, hsla(240, 90%, 70%, 0.3) 0px, transparent 50%),
+    radial-gradient(at 80% 18%, hsla(260, 100%, 65%, 0.25) 0px, transparent 50%),
+    radial-gradient(at 50% 60%, hsla(280, 85%, 60%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 10% 90%, hsla(220, 85%, 65%, 0.25) 0px, transparent 50%),
+    radial-gradient(at 85% 95%, hsla(200, 90%, 70%, 0.3) 0px, transparent 50%);
+
+  background-attachment: fixed;
+  background-size: cover;
+  animation: aurora 30s ease-in-out infinite;
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%, 100% 50%, 50% 0%, 50% 100%, 100% 100%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 50%, 50% 100%, 50% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 0% 50%, 100% 50%, 50% 0%, 50% 100%, 100% 100%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.card {
+  @apply relative rounded-2xl p-6 shadow-lg transition transform hover:scale-105;
+
+  background: linear-gradient(135deg, rgba(50, 80, 255, 0.15), rgba(180, 70, 255, 0.15));
+  border: 1px solid rgba(120, 80, 255, 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.card:hover {
+  background: linear-gradient(135deg, rgba(100, 120, 255, 0.25), rgba(200, 100, 255, 0.25));
+  border-color: rgba(160, 120, 255, 0.6);
+  box-shadow: 0 0 30px rgba(140, 100, 255, 0.5);
+}
+
+.icon-circle {
+  @apply bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full p-3 flex items-center justify-center shadow-[0_0_15px_rgba(56,189,248,0.6)] transition transform;
+}
+
+.icon-circle:hover {
+  @apply scale-110 shadow-[0_0_25px_rgba(168,85,247,0.7)];
+}
