@@ -1,20 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import AnimatedNumber from "./AnimatedNumber";
 import { PieChart, TrendingUp, Clock, Donut, BarChart, Circle, AreaChart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const FeaturesSection = () => {
   const [startAnimation, setStartAnimation] = useState(false);
   const sectionRef = useRef(null);
+  const { t } = useTranslation();
 
   const cards = [
-    { id: "n90", number: 90, unit: "%", title: "Рынка Узбекистана свободно", icon: <PieChart size={60} className="text-cyan-400 opacity-40" /> },
-    { id: "n41m", number: 41000000, unit: "сум", title: "Низкий порог входа в бизнес", icon: <TrendingUp size={60} className="text-purple-400 opacity-40" /> },
-    { id: "n247", number: 24, number2: 7, unit: "", title: "Аппарат работает круглосуточно", icon: <Clock size={60} className="text-cyan-400 opacity-40" /> },
-    { id: "n80", number: 80, unit: "%", title: "Годовых — доход бизнеса", icon: <Donut size={60} className="text-purple-400 opacity-40" /> },
-    { id: "n1_8m", number: 1800000, unit: "сум", title: "Средний месячный доход с 1 аппарата", icon: <AreaChart size={60} className="text-cyan-400 opacity-40"/>, colSpan: "lg:col-span-2"  },
-    { id: "n18m", number: 18000000, unit: "сум", title: "Прибыль в месяц в сети 10 аппаратов", icon: <BarChart size={60} className="text-purple-400 opacity-30" />, colSpan: "lg:col-span-2" },
-    { id: "nMinVznos", number: 100, unit: "%", title: "Минимальный взнос", icon: <Circle size={60} className="text-cyan-400 opacity-40" />, reverse: true },
-    { id: "nRassrochka", number: 14, unit: "%", title: "Рассрочка в кредит", subtitle: "Выберите нас поставщиком в smart-market.uz", button: "Узнать подробнее", colSpan: "lg:col-span-3", reverse: true },
+    { id: "n90", number: 90, unit: "%", title: t("features.marketFree"), icon: <PieChart size={60} className="text-cyan-400 opacity-40" /> },
+    { id: "n41m", number: 41000000, unit: "сум", title: t("features.lowEntry"), icon: <TrendingUp size={60} className="text-purple-400 opacity-40" /> },
+    { id: "n247", number: 24, number2: 7, unit: "", title: t("features.works247"), icon: <Clock size={60} className="text-cyan-400 opacity-40" /> },
+    { id: "n80", number: 80, unit: "%", title: t("features.yearlyIncome"), icon: <Donut size={60} className="text-purple-400 opacity-40" /> },
+    { id: "n1_8m", number: 1800000, unit: "сум", title: t("features.avgMonthlyIncome"), icon: <AreaChart size={60} className="text-cyan-400 opacity-40"/>, colSpan: "lg:col-span-2"  },
+    { id: "n18m", number: 18000000, unit: "сум", title: t("features.profit10Machines"), icon: <BarChart size={60} className="text-purple-400 opacity-30" />, colSpan: "lg:col-span-2" },
+    { id: "nMinVznos", number: 100, unit: "%", title: t("features.minContribution"), icon: <Circle size={60} className="text-cyan-400 opacity-40" />, reverse: true },
+    { id: "nRassrochka", number: 14, unit: "%", title: t("features.creditInstallment"), subtitle: t("features.creditSubtitle"), button: t("features.learnMore"), colSpan: "lg:col-span-3", reverse: true },
   ];
 
   useEffect(() => {
@@ -44,9 +46,9 @@ const FeaturesSection = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white">Что мы предлагаем?</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white">{t("features.title")}</h2>
           <p className="mt-4 text-lg text-slate-300 max-w-3xl mx-auto">
-            Поможем вам открыть бизнес по продаже питьевой воды в вашем городе: оборудование, бесплатное обучение, консультации по продвижению, бизнес-сообщество!
+            {t("features.description")}
           </p>
         </div>
 

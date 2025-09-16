@@ -1,8 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const WaterQualitySection = () => {
-  const backgroundImageUrl =
-    'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2832&auto=format&fit=crop';
+  const { t } = useTranslation();
 
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-slate-950">
@@ -15,22 +15,22 @@ const WaterQualitySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
           <div className="lg:col-span-1">
             <h3 className="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
-              Качество <br /> воды
+              {t('waterQuality.title1')} <br /> {t('waterQuality.title2')}
             </h3>
           </div>
 
           <div className="lg:col-span-2 space-y-6">
             <p className="text-2xl md:text-3xl font-semibold text-white leading-snug">
-              Аппарат оснащен{' '}
+              {t('waterQuality.text1')}{" "}
               <span className="text-cyan-400 drop-shadow-md">
-                лучшими фильтрами
-              </span>{' '}
-              для очистки воды. Мы обеспечиваем качество воды для ваших покупателей.
+                {t('waterQuality.highlight1')}
+              </span>{" "}
+              {t('waterQuality.text1_cont')}
             </p>
             <p className="text-2xl md:text-3xl font-semibold text-white leading-snug">
-              Всегда свежая вода, прошедшая{' '}
+              {t('waterQuality.text2')}{" "}
               <span className="text-cyan-400 drop-shadow-md">
-                8 ступеней очистки
+                {t('waterQuality.highlight2')}
               </span>
               .
             </p>

@@ -1,19 +1,22 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ShieldCheck, Cog, Award } from 'lucide-react';
 
 const ReliabilitySection = () => {
+  const { t } = useTranslation();
+
   const features = [
     {
       icon: <ShieldCheck size={28} />,
-      text: 'Надежная сборка аппарата: за 7 лет работы ни один аппарат не прекратил работу.',
+      text: t('reliability.feature1'),
     },
     {
       icon: <Cog size={28} />,
-      text: 'Аппарат собран из проверенных материалов. Все запчасти легко заменяемы.',
+      text: t('reliability.feature2'),
     },
     {
       icon: <Award size={28} />,
-      text: 'Мы предоставляем гарантию 1 год на каждый аппарат.',
+      text: t('reliability.feature3'),
     },
   ];
 
@@ -29,7 +32,7 @@ const ReliabilitySection = () => {
           
           <div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-10 drop-shadow-lg">
-              Обеспечиваем <span className="text-cyan-400">надежность</span>
+              {t('reliability.title')} <span className="text-cyan-400">{t('reliability.highlight')}</span>
             </h2>
             <div className="space-y-8">
               {features.map((feature, index) => (
@@ -51,7 +54,7 @@ const ReliabilitySection = () => {
           <div className="flex justify-center lg:justify-end">
             <img
               src='/images/reliability.png' 
-              alt="Надежная сборка аппарата Aquabox"
+              alt={t('reliability.imageAlt')}
               className="rounded-2xl w-full max-w-md shadow-lg shadow-cyan-500/20 hover:scale-[1.02] transition-transform duration-300"
             />
           </div>

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const SupportSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-slate-950">
       <div className="absolute -top-24 -left-24 w-80 h-80 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -15,19 +18,15 @@ const SupportSection = () => {
       <div className="relative container mx-auto bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-3xl p-10 sm:p-14 shadow-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg hover:translate-x-1 transition-transform duration-300">
-            Постоянное <span className="text-cyan-400">сопровождение бизнеса</span>
+            {t('support.title1')} <span className="text-cyan-400">{t('support.title2')}</span>
           </h2>
 
           <div className="space-y-6">
             <p className="text-2xl md:text-3xl font-semibold text-white leading-snug hover:translate-x-1 transition-transform duration-300">
-              Мы будем постоянно следить за{' '}
-              <span className="text-cyan-400 drop-shadow-md">качеством воды</span> 
-              в ваших аппаратах, а также своевременно производить замену фильтров и техническое обслуживание.
+              {t('support.text1')} <span className="text-cyan-400 drop-shadow-md">{t('support.highlight1')}</span> {t('support.text1_cont')}
             </p>
             <p className="text-2xl md:text-3xl font-semibold text-white leading-snug hover:translate-x-1 transition-transform duration-300">
-              Наш сервис позволит поддерживать аппараты в{' '}
-              <span className="text-cyan-400 drop-shadow-md">идеальном состоянии</span> 
-              на долгие годы.
+              {t('support.text2')} <span className="text-cyan-400 drop-shadow-md">{t('support.highlight2')}</span> {t('support.text2_cont')}
             </p>
           </div>
         </div>

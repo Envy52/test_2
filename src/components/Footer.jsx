@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const LogoIcon = () => (
   <svg
     width="40"
@@ -25,6 +27,16 @@ const LogoIcon = () => (
 );
 
 const Footer = () => {
+  const { t } = useTranslation();
+
+  const navItems = [
+    { key: "about", href: "#" },
+    { key: "shop", href: "#" },
+    { key: "career", href: "#" },
+    { key: "product", href: "#" },
+    { key: "blog", href: "#" },
+  ];
+
   return (
     <footer className="relative overflow-hidden bg-slate-900/80 backdrop-blur-xl border-t border-white/10 py-16">
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
@@ -46,15 +58,17 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="font-bold text-white mb-4 text-lg">Навигация:</h3>
+          <h3 className="font-bold text-white mb-4 text-lg">
+            {t("footer.navTitle")}
+          </h3>
           <ul className="space-y-2 columns-2">
-            {["О компании", "Aquabox Shop", "Карьера", "Продукт", "Блог"].map((item) => (
-              <li key={item}>
+            {navItems.map((item) => (
+              <li key={item.key}>
                 <a
-                  href="#"
+                  href={item.href}
                   className="hover:text-cyan-300 transition-colors duration-300"
                 >
-                  {item}
+                  {t(`nav.${item.key}`)}
                 </a>
               </li>
             ))}
@@ -62,26 +76,32 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="font-bold text-white mb-4 text-lg">Контакты:</h3>
+          <h3 className="font-bold text-white mb-4 text-lg">
+            {t("footer.contact")}
+          </h3>
           <ul className="space-y-2">
             <li>
               <a
-                href="mailto:karimovcomment@gmai.com"
+                href="mailto:karimovcomment@gmail.com"
                 className="hover:text-purple-300 transition-colors duration-300"
               >
-                karimovcomment@gmai.com
+                karimovcomment@gmail.com
               </a>
             </li>
             <li>
               <a
-                href="tel:+998974143137"
+                href="tel:+998900211051"
                 className="hover:text-purple-300 transition-colors duration-300"
               >
-                +998 97 414 31 37
+                +998 90 021 10 51
               </a>
             </li>
           </ul>
         </div>
+      </div>
+
+      <div className="relative mt-10 text-center text-slate-400 text-sm">
+        {t("footer.rights")}
       </div>
     </footer>
   );

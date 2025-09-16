@@ -1,25 +1,26 @@
 import { Info } from "lucide-react";
-
-const products = [
-  {
-    id: 1,
-    title: "Водомат RS-27",
-    year: "2025 год",
-    description:
-      "Аппарат по очистке и продаже питьевой воды. Состоит из модуля розлива и системы очистки в антивандальном корпусе.",
-    image: "/images/aquabox300.png",
-  },
-  {
-    id: 2,
-    title: "Водомат RS-28",
-    year: "2025 год",
-    description:
-      "Компактный аппарат для продажи воды с закрытой системой очистки.",
-    image: "/images/aquaboxnano.png",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function AquaboxShop() {
+  const { t } = useTranslation();
+
+  const products = [
+    {
+      id: 1,
+      title: t("products.rs27.title"),
+      year: t("products.rs27.year"),
+      description: t("products.rs27.description"),
+      image: "/images/aquabox300.png",
+    },
+    {
+      id: 2,
+      title: t("products.rs28.title"),
+      year: t("products.rs28.year"),
+      description: t("products.rs28.description"),
+      image: "/images/aquaboxnano.png",
+    },
+  ];
+
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-slate-950 text-white">
       <div className="absolute -top-24 -left-24 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -42,7 +43,7 @@ export default function AquaboxShop() {
             <p className="text-indigo-300 text-sm mb-2">{product.year}</p>
             <p className="text-gray-300 mb-4">{product.description}</p>
             <button className="bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-bold py-2 px-6 rounded-full shadow-md hover:scale-105 transition-transform duration-300">
-              Подробнее
+              {t("products.buttonDetails")}
             </button>
           </div>
         ))}

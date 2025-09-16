@@ -1,7 +1,10 @@
 import React from "react";
 import { Mountain } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative pt-8 px-4">
       <div className="container mx-auto mb-20">
@@ -15,28 +18,28 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.25),transparent_60%)]" />
           </div>
 
-          <div className="relative z-10 h-full flex flex-col justify-between p-12 text-white">
+          <div className="relative z-10 h-full flex flex-col justify-between p-23 text-white">
             <div>
               <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-cyan-500/30 to-purple-600/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-lg">
                 <Mountain size={20} className="text-cyan-300" />
                 <span className="font-semibold text-sm">
-                  Свежесть Тянь-Шаня рядом с домом
+                  {t("hero.badge")}
                 </span>
               </div>
             </div>
 
             <div>
               <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]">
-                Первый в Узбекистане
+                {t("hero.title.line1")}
                 <br />
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  производитель аппаратов
+                  {t("hero.title.line2")}
                 </span>
                 <br />
-                по очистке воды
+                {t("hero.title.line3")}
               </h1>
               <p className="mt-6 text-xl text-slate-200 drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] max-w-2xl">
-                Низкий порог входа в бизнес по продаже воды
+                {t("hero.subtitle")}
               </p>
 
               <div className="mt-8">
@@ -44,7 +47,7 @@ const HeroSection = () => {
                   href="#"
                   className="px-6 py-3 rounded-full font-semibold text-lg bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 shadow-[0_0_20px_rgba(56,189,248,0.5)] hover:shadow-[0_0_35px_rgba(168,85,247,0.6)] transition-all duration-300"
                 >
-                  Узнать больше
+                  {t("hero.button")}
                 </a>
               </div>
             </div>

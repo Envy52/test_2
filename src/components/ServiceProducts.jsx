@@ -1,7 +1,10 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ServiceProducts = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 px-4 relative overflow-hidden bg-slate-950">
       <div className="absolute inset-0">
@@ -13,32 +16,28 @@ const ServiceProducts = () => {
         <div className="flex-grow relative z-10 space-y-6">
           <div>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
-              Товары для обслуживания
+              {t("serviceProducts.title")}
             </h2>
             <a
               href="#"
               className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors"
             >
-              Смотреть все →
+              {t("serviceProducts.link")}
             </a>
           </div>
 
           <div className="bg-slate-800/70 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300 max-w-md">
             <img
               src="/images/serviceproducts.png"
-              alt="Aquabox-2024"
+              alt={t("serviceProducts.productName")}
               className="w-full h-64 object-cover"
             />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-white mb-3">
-                Aquabox-2024
+                {t("serviceProducts.productName")}
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                Умный вендинговый аппарат для воды — автоматизированное
-                устройство, позволяющее быстро наливать воду, оплачивая через
-                популярные платёжные системы. Подключён к интернету,
-                поддерживает мониторинг, учёт транзакций и удалённое управление.
-                Идеально для дворов, бизнес-центров и жилых районов.
+                {t("serviceProducts.description")}
               </p>
             </div>
           </div>
@@ -54,7 +53,7 @@ const ServiceProducts = () => {
              shadow-[0_0_20px_rgba(56,189,248,0.5)] 
              hover:shadow-[0_0_35px_rgba(168,85,247,0.6)]"
           >
-            <span>Заказать аппарат</span>
+            <span>{t("serviceProducts.button")}</span>
             <ArrowUpRight size={22} />
           </button>
         </div>

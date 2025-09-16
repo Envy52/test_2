@@ -1,13 +1,16 @@
 import React from "react"; 
 import { Phone, FileText, ShoppingCart, Wrench, DollarSign } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const HowToStartSection = () => {
+  const { t } = useTranslation();
+
   const steps = [
-    { icon: <Phone size={24} />, text: "Получите консультацию" },
-    { icon: <FileText size={24} />, text: "Заключите договор" },
-    { icon: <ShoppingCart size={24} />, text: "Купите аппарат" },
-    { icon: <Wrench size={24} />, text: "Установите аппарат" },
-    { icon: <DollarSign size={24} />, text: "Получайте прибыль" },
+    { icon: <Phone size={24} />, text: t("howToStart.step1") },
+    { icon: <FileText size={24} />, text: t("howToStart.step2") },
+    { icon: <ShoppingCart size={24} />, text: t("howToStart.step3") },
+    { icon: <Wrench size={24} />, text: t("howToStart.step4") },
+    { icon: <DollarSign size={24} />, text: t("howToStart.step5") },
   ];
 
   return (
@@ -17,7 +20,7 @@ const HowToStartSection = () => {
 
       <div className="relative container mx-auto bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-3xl p-10 sm:p-14 shadow-xl">
         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-12 drop-shadow-lg text-center lg:text-left">
-          Как начать бизнес с нами
+          {t("howToStart.title")}
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -43,7 +46,7 @@ const HowToStartSection = () => {
           <div className="flex justify-center lg:justify-end">
             <img
               src="/images/reliability.png" 
-              alt="Надежная сборка аппарата Aquabox"
+              alt={t("howToStart.imageAlt")}
               className="rounded-2xl w-full max-w-md shadow-lg shadow-cyan-500/20 hover:scale-[1.02] transition-transform duration-300"
             />
           </div>

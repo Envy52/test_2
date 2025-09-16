@@ -1,7 +1,10 @@
 import React from "react";
 import { Waves } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const InfoSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative pt-12 pb-20 px-4 bg-slate-950 overflow-hidden">
       <div className="absolute -top-20 left-1/4 w-80 h-80 bg-cyan-400/25 rounded-full blur-3xl animate-pulse"></div>
@@ -11,12 +14,10 @@ const InfoSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           <div className="bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-3xl p-12 shadow-xl flex flex-col justify-center hover:shadow-cyan-400/30 transition-shadow duration-300">
             <h2 className="text-4xl sm:text-5xl font-extrabold text-white leading-tight drop-shadow-lg">
-              Компания Aquabox на рынке Узбекистана с 2017 года.
+              {t("info.title")}
             </h2>
             <p className="mt-4 text-lg text-slate-300 leading-relaxed">
-              С нашей компанией многие люди по всему Узбекистану начали свой
-              прибыльный бизнес по продаже воды. Начните зарабатывать вместе с
-              нами!
+              {t("info.description")}
             </p>
           </div>
 
