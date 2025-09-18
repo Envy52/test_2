@@ -40,7 +40,7 @@ const ArticlesSection = () => {
                 <div className="sm:col-span-3">
                   <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-cyan-500/20 transition-shadow duration-300">
                     <img 
-                      src={article.imageUrl || "https://via.placeholder.com/150"} 
+                      src={article.imageUrl || "/images/article.jpg"} 
                       alt={article.title} 
                       className="w-full h-full object-cover aspect-square sm:aspect-auto"
                     />
