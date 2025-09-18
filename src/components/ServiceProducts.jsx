@@ -30,7 +30,7 @@ const ServiceProducts = () => {
             <img
               src="/images/serviceproducts.png"
               alt={t("serviceProducts.productName")}
-              className="w-full h-64 object-cover"
+              className="w-full object-contain"
             />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-white mb-3">

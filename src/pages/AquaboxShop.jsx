@@ -35,7 +35,7 @@ export default function AquaboxShop() {
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-64 object-contain mb-4"
+              className="w-full h-auto max-h-[450px] object-contain mb-4 rounded-2xl shadow-lg"
             />
             <h2 className="text-xl font-bold text-white mb-2 flex items-center justify-center gap-2">
               {product.title} <Info size={18} />

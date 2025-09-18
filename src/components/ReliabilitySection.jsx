@@ -53,7 +53,7 @@ const ReliabilitySection = () => {
 
           <div className="flex justify-center lg:justify-end">
             <img
-              src='/images/reliability.png' 
+              src='/images/reliability.jpg' 
               alt={t('reliability.imageAlt')}
               className="rounded-2xl w-full max-w-md shadow-lg shadow-cyan-500/20 hover:scale-[1.02] transition-transform duration-300"
             />
